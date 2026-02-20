@@ -7,16 +7,24 @@ static int multiplyNumbers(int x, int y) {
 }
 
 int main(void) {
-    int a = 0;
+    int a = 2;
     int b = 5;
 
     int result = multiplyNumbers(a, b);
-    (void)result;  /* evita warning de variável não usada */
 
     int arr[NUM_ELEMENTS];
-    for (int i = 0; i < NUM_ELEMENTS; i++) {  /* < em vez de <= */
+    int sum = 0;
+
+    for (int i = 0; i < NUM_ELEMENTS; i++) {
         arr[i] = i;
     }
+
+    for (int i = 0; i < NUM_ELEMENTS; i++) {
+        sum += arr[i];
+    }
+
+    (void)result;
+    (void)sum;
 
     return 0;
 }
