@@ -1,19 +1,21 @@
-#include "stdio.h"
+#include <stdio.h>
 
-enum { A_LIMIT = 5 };
-static int a = 0; // var global
-static int b = 0; // var global
 
-static void foo(void) {
-    a = a + 1; // acessa variavel global
+static void foo(int *a) {
+    *a = *a + 1;
+    
 }
 
-void main(void) {
+int main(void) {
+    int a = 0;
+    int b = 0;
+
     while (1) {
-        foo();
-        
-        if (a > A_LIMIT) {
+        foo(&a);
+
+        if (a > 5) {
             b = 1;
         }
     }
+
 }
